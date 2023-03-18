@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Standard Units</title>
+</head>
+<body>
+<header>Standard Units</header>
+<table border="solid">
+    <tr>
+        <th>Title</th>
+        <th>Definition</th>
+        <th>Symbol</th>
+        <th>Dimension</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr th:each="unit:${units}">
+        <td th:text="${unit.title}"/>
+        <td th:text="${unit.definition}"/>
+        <td th:text="${unit.symbol}"/>
+        <td th:text="${unit.dimension}"/>
+        <td>
+            <a th:href="@{'/edit-form/' + ${unit.id}}">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{'/delete/' + ${unit.id}}">Delete</a>
+        </td>
+    </tr>
+</table>
+<a href="/create-form">Add unit</a>
+</body>
+</html>
